@@ -15,8 +15,6 @@ def analisar_microclima():
 
     print("--- Análise de Microclima Urbano ---")
 
-
-
     dados_locais = [
 
         ["Largo de São Mateus", 18, 97, 84],
@@ -27,15 +25,11 @@ def analisar_microclima():
 
     ]
 
-
-
     for local in dados_locais:
 
         nome = local[0]
 
         print(f"\nAnalisando local: {nome}")
-
-
 
         for indice, dado in enumerate(local):
 
@@ -59,8 +53,6 @@ def analisar_microclima():
 
         iqa = local[3]
 
-
-
         match iqa:
 
             case _ if iqa <= 50:
@@ -79,11 +71,7 @@ def analisar_microclima():
 
                 qualidade_ar = "Muito Ruim"
 
-
-
         print(f"-> Classificação do ar: {qualidade_ar}")
-
-
 
         nota = 10
 
@@ -97,8 +85,6 @@ def analisar_microclima():
 
             nota -= 1
 
-
-
         if umidade < 40 or umidade > 80:
 
             nota -= 2
@@ -106,8 +92,6 @@ def analisar_microclima():
         elif umidade < 50 or umidade > 70:
 
             nota -= 1
-
-
 
         if iqa > 100:
 
@@ -117,18 +101,11 @@ def analisar_microclima():
 
             nota -= 1
 
-
-
         if nota < 0:
 
             nota = 0
 
-
-
         print(f"-> Nota de Conforto Urbano: {nota}/10")
-
-
-
 
 
 analisar_microclima()
@@ -141,13 +118,9 @@ def simulador_evacuacao():
 
     print("--- Simulador de Evacuação ---")
 
-
-
     locais = ["Sala", "Corredor", "Sala com chave", "Portão", "Saída"]
 
     estados = ["inicio", "direita fechada", "tem chave", "portao trancado", "saida"]
-
-
 
     posicao = 0
 
@@ -157,21 +130,15 @@ def simulador_evacuacao():
 
     saiu = False
 
-
-
     while energia > 0 and not saiu:
 
         print(f"\nLocal: {locais[posicao]}")
 
         print(f"Estado: {estados[posicao]}")
 
-
-
         if estados[posicao] == "inicio":
 
             posicao += 1
-
-
 
         elif estados[posicao] == "direita fechada":
 
@@ -180,8 +147,6 @@ def simulador_evacuacao():
             print("Indo pela esquerda")
 
             posicao += 1
-
-
 
         elif estados[posicao] == "tem chave":
 
@@ -192,8 +157,6 @@ def simulador_evacuacao():
                 print("Chave coletada")
 
             posicao += 1
-
-
 
         elif estados[posicao] == "portao trancado":
 
@@ -209,23 +172,17 @@ def simulador_evacuacao():
 
                 posicao -= 1
 
-
-
         elif estados[posicao] == "saida":
 
             print("Saída encontrada")
 
             saiu = True
 
-
-
         energia -= 1
 
         print(f"Energia: {energia}")
 
         print(f"Inventário: {inventario}")
-
-
 
     if saiu:
 
@@ -234,9 +191,6 @@ def simulador_evacuacao():
     else:
 
         print("\nSem energia")
-
-
-
 
 
 simulador_evacuacao()
