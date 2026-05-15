@@ -16,14 +16,10 @@ def processar_vendas():
     total_compra = 0.0
 
     itens_comprados = 0
-
-
-
+    
     print("Quantos produtos diferentes foram comprados?")
 
     quantidade_tipos = int(input("Quantidade de Tipos: "))
-
-
 
     for i in range(quantidade_tipos):
 
@@ -32,8 +28,6 @@ def processar_vendas():
         preco_unitario = float(input("Qual o valor unitário do produto? "))
 
         quantidade_prod = int(input("Quantidade do produto: "))
-
-
 
         if preco_unitario <= 0 or quantidade_prod <= 0:
 
@@ -48,7 +42,6 @@ def processar_vendas():
             total_compra += subtotal
 
             itens_comprados += quantidade_prod
-
 
 
     if total_compra > 500.00:
@@ -67,8 +60,6 @@ def processar_vendas():
 
         total_final = total_compra
 
-
-
     print(f"Resumo: {itens_comprados} itens. Total a pagar: R$ {total_final:.2f}")
 
 
@@ -78,60 +69,31 @@ processar_vendas()
 #CÓDIGO 2:
 
 
-
 def analisar_clima():
-
     soma_temperaturas = 0.0
-
     dias_quentes = 0
-
     alerta_extremo = False
 
-
-
     for dia in range(1, 8):
-
-        print(f"Digite a temperatura do dia {dia}:")
-
-        temp = float(input())
-
-
+        temp = float(input(f"Digite a temperatura do dia {dia}: "))
 
         soma_temperaturas = soma_temperaturas + temp
 
-
-
         if temp > 35.0:
-
             dias_quentes = dias_quentes + 1
 
-
-
         if temp > 45.0 or temp < -5.0:
-
             alerta_extremo = True
-
-
 
     media = soma_temperaturas / 7
 
-
-
     print(f"Média semanal: {media:.2f}")
-
     print(f"Dias acima de 35°C: {dias_quentes}")
 
-
-
     if alerta_extremo == True:
-
-        print("CUIDADO: Condições climáticas perigosas detectadas!")
-
+        print("CUIDADO: Condições climáticas perigosas detectadas....")
     else:
-
-        print("Clima dentro da normalidade operacional.")
-
-
+        print("Clima dentro da normalidade, sem perigo.")
 
 analisar_clima()
 
@@ -140,105 +102,44 @@ analisar_clima()
 
 
 def sistema_notas_turma():
-
-    print("Quantos alunos existem na turma?")
-
-    total_alunos = int(input())
-
-
+    total_alunos = int(input("Quantos alunos existem na turma? "))
 
     for j in range(1, total_alunos + 1):
-
         print(f" Aluno {j}")
-
-        print("Nome do aluno:")
-
-        aluno_nome = input()
-
-
-
-        print("Nota 1:")
-
-        n1 = float(input())
-
-
-
-        print("Nota 2:")
-
-        n2 = float(input())
-
-
+        aluno_nome = input("Nome do aluno: ")
+        n1 = float(input("Nota 1: "))
+        n2 = float(input("Nota 2: "))
 
         media_aluno = (n1 + n2) / 2
 
-
-
         if media_aluno >= 7.0:
-
             print(f"{aluno_nome}: Aprovado com média {media_aluno:.1f}")
-
         elif media_aluno >= 5.0:
-
             print(f"{aluno_nome}: Recuperação (Média: {media_aluno:.1f})")
-
         else:
-
             print(f"{aluno_nome}: Reprovado")
-
-
 
 sistema_notas_turma()
 
 #CÓDIGO 4:
 
 def simulador_poupanca():
-
-    print("Valor inicial do investimento:")
-
-    saldo = float(input())
-
-
-
-    print("Taxa de juros mensal (em %):")
-
-    taxa = float(input())
-
-
-
-    print("Número de meses da simulação:")
-
-    meses = int(input())
-
-
+    saldo = float(input("Valor inicial do investimento: "))
+    taxa = float(input("Taxa de juros mensal (em %): "))
+    meses = int(input("Número de meses da simulação: "))
 
     for m in range(1, meses + 1):
-
-        print(f"Quanto deseja depositar no mês {m}? (0 para nenhum)")
-
-        aporte = float(input())
-
-
-
-        saldo = saldo + aporte
-
+        deposito = float(input(f"Quanto deseja depositar no mês {m}? (0 para nenhum) "))
+        
+        saldo = saldo + deposito
         juros = saldo * (taxa / 100)
-
         saldo = saldo + juros
-
-
-
+        
         print(f"Mês {m}: Saldo atualizado = R$ {saldo:.2f}")
 
-
-
         if saldo > 10000.0:
-
-            print(f"Parabéns! Você atingiu a meta de 10k no mês {m}")
-
-
+            print(f"Parabéns! Você atingiu a meta de 10 mil no mês {m}")
 
     print(f"Resultado final após {meses} meses: R$ {saldo:.2f}")
-
-
 
 simulador_poupanca()
